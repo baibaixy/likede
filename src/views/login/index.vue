@@ -104,7 +104,7 @@ export default {
     }
   },
   computed: {
-    ...mapUserState(['verifyCodeImg', 'ClientToken'])
+    ...mapUserState(['verifyCodeImg', 'ClientToken', 'UserInfo'])
   },
   created() {
     this.getverifyCode()
