@@ -37,7 +37,12 @@
               </template>
             </el-input>
           </el-form-item>
-          <el-button type="primary" @click="submitForm">登录</el-button>
+          <el-button
+            type="primary"
+            @click="submitForm"
+            @keydown.enter="submitForm"
+            >登录</el-button
+          >
         </el-form>
       </div>
     </div>

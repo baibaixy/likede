@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar-logo-container" :class="{ collapse: collapse }">
-
+    <img src="http://likede2-admin.itheima.net/img/logo.3673fab5.png" alt="" />
     <!-- <transition name="sidebarLogoFade">
       <router-link v-if="collapse" key="collapse" class="sidebar-logo-link" to="/">
         <img v-if="logo" :src="logo" class="sidebar-logo">
@@ -50,6 +50,13 @@ export default {
   text-align: center;
   overflow: hidden;
   background-image: url('~@/assets/layout/蓝条条.png');
+  img {
+    position: absolute;
+    top: 10px;
+    left: 17px;
+    width: 88px;
+    height: 36px;
+  }
   & .sidebar-logo-link {
     height: 100%;
     width: 100%;

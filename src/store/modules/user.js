@@ -1,6 +1,7 @@
 import { getImageCode, UserLogin } from '@/api/public'
 import { getUserService } from '@/api/userService'
 import router from '@/router'
+import { setTokenTime } from '@/utils/auth'
 export default {
   namespaced: true,
   state: {
@@ -41,9 +42,10 @@ export default {
     },
     async getUserInfo({ commit }, payload) {
       const data = await UserLogin(payload)
-      console.log(data)
+      // console.log(data)
       commit('setUserInfo', data.token)
       commit('setUSerId', data.userId)
+      setTokenTime()
       router.push('/')
     },
     async getUserService(context) {
@@ -52,6 +54,10 @@ export default {
       const res = await getUserService(id)
       // console.log(res)
       context.commit('setUserService', res.data)
+    },
+    logout({ commit }) {
+      commit('setUserInfo', '')
+      commit('setUserService', {})
     }
   }
 }
